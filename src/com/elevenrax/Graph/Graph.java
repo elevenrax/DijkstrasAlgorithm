@@ -105,6 +105,7 @@ public class Graph {
      * @return The target node
      */
     private Node getNodeWithGivenId(BigInteger id) {
+        // TODO Slow and uncessesary: fix by getting Node directly from HashMap for O(1) retreival
         Iterator<Node> nodeIter = mGraph.keySet().iterator();
         while (nodeIter.hasNext()) {
             Node n = nodeIter.next();
@@ -201,13 +202,13 @@ public class Graph {
      */
     private Node getCheapestCandidateNode(List<Node> unsettled) {
 
+        //TODO Consider unsettled as self balancing, therefore find cheapest will be O(log(n))
         Iterator<Node> unsettledIterator = unsettled.iterator();
 
         Node lowestDistanceNode = null;
         int cheapestNextMove = Integer.MAX_VALUE;
 
         while ( unsettledIterator.hasNext() ) {
-
             Node node = unsettledIterator.next();
             if (node.getAccumulatedMoveCost() < cheapestNextMove) {
                 lowestDistanceNode = node;

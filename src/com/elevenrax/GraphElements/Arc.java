@@ -1,6 +1,8 @@
 package com.elevenrax.GraphElements;
 
 
+import com.elevenrax.Graph.Graph;
+
 public class Arc {
 
     private Node mNext;
@@ -11,7 +13,6 @@ public class Arc {
         mNext = next;
         mWeight = weight;
     }
-
 
     public Node getDestinationNode() {
         return mNext;

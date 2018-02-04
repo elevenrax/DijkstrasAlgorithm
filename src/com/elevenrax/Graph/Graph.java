@@ -11,7 +11,7 @@ import java.util.*;
 public class Graph {
 
     // Adjacency Map implementation
-    protected HashMap<Node, List<Arc>> mGraph;
+    private HashMap<Node, List<Arc>> mGraph;
 
 
     /**
@@ -105,7 +105,7 @@ public class Graph {
      * @return The target node
      */
     private Node getNodeWithGivenId(BigInteger id) {
-        // TODO Slow and uncessesary: fix by getting Node directly from HashMap for O(1) retreival
+        // TODO Slow and uncessesary: Store Nodes in HashMap <ID:int, Node> for O(1) retrieval
         Iterator<Node> nodeIter = mGraph.keySet().iterator();
         while (nodeIter.hasNext()) {
             Node n = nodeIter.next();
@@ -202,7 +202,7 @@ public class Graph {
      */
     private Node getCheapestCandidateNode(List<Node> unsettled) {
 
-        //TODO Consider unsettled as self balancing, therefore find cheapest will be O(log(n))
+        //TODO Consider `unsettled` as self balancing tree structure, therefore find cheapest will be O(log(n))
         Iterator<Node> unsettledIterator = unsettled.iterator();
 
         Node lowestDistanceNode = null;

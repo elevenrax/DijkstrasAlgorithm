@@ -78,7 +78,7 @@ public class Node {
     public boolean equals(Object obj) {
         if (obj instanceof Node && obj != null) {
             Node other = (Node) obj;
-            return this.getId() == other.getId();
+            return this.getId().equals(other.getId());
         }
         return false;
     }

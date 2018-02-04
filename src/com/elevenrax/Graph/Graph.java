@@ -202,7 +202,6 @@ public class Graph {
      */
     private Node getCheapestCandidateNode(List<Node> unsettled) {
 
-        //TODO Consider `unsettled` as self balancing tree structure, therefore find cheapest will be O(log(n))
         Iterator<Node> unsettledIterator = unsettled.iterator();
 
         Node lowestDistanceNode = null;
